@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: black;
+}
+
+video {
+  z-index: 1;
+  display: block;
+  margin: 0 auto;
+  background-color: #ccc;
+
+  /* maximize video player size within viewport while maintaining 16:9 format */
+  width: 100vw;
+  height: 56.25vw;
+  max-width: 177.78vh;
+  max-height: 100vh;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeout {
+  animation: fadeOut 1s linear;
+}
+
+input,
+ul,
+a {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+input:hover,
+ul:hover,
+a:hover {
+  opacity: 1;
+}
+
+input[type=file] {
+  display: none;
+}
+
+a {
+  display: block;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  left: 0;
+  top: 0;
+  padding: 2em;
+  font-size: 1.5em;
+}
+
+input[type=text] {
+  bottom: 1.5em;
+  left: 1em;
+  font-size: 1.5em;
+  width: 4em;
+  text-align: center;
+  border: 1em solid rgba(0, 0, 0, 0.7);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 18px;
+  top: 124px;
+  list-style: none;
+  right: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  list-style: decimal;
+}
+
+li {
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+li.played {
+  text-decoration: line-through;
+  list-style: none;
+}

@@ -1,7 +1,7 @@
     // get DOM elements
     const video = document.querySelector('video');
     const filesInput = document.querySelector('input[type=file]');
-    const speedInput = document.querySelector('input[type=text]');
+    // const speedInput = document.querySelector('input[type=text]');
     const filesButton = document.querySelector('a');
     const playlist = document.querySelector('ul');
 
@@ -28,7 +28,7 @@
         listItem.addEventListener('click', function (e) {
           this.classList.add('played');
           video.src = this.objUrl;
-          video.playbackRate = Number(speedInput.value);
+          // video.playbackRate = Number(speedInput.value);
         });
 
         // append li to the list
@@ -44,12 +44,12 @@
       playlist.classList.remove('fadeout');
     });
 
-    // handle changes to speed input
-    speedInput.addEventListener('change', e => {
-      video.playbackRate = Number(speedInput.value);
-      // write actual playback rate value back to input
-      speedInput.value = Number(video.playbackRate);
-    });
+    // // handle changes to speed input
+    // speedInput.addEventListener('change', e => {
+    //   video.playbackRate = Number(speedInput.value);
+    //   // write actual playback rate value back to input
+    //   speedInput.value = Number(video.playbackRate);
+    // });
 
     // add keyboard shortcuts for pause (space) and 5 sec jump (left/right arrow)
     document.addEventListener('keydown', e => {
